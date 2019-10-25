@@ -5,40 +5,19 @@ namespace GildedRose
     public class GildedRose
     {
         IList<Item> Items;
+        private ItemFactory factory;
         public GildedRose(IList<Item> Items)
         {
             this.Items = Items;
+            factory = new ItemFactory();
         }
 
         public void UpdateQuality()
         {
             foreach(Item item in Items)
             {
-                UpdateQualityOfGenericItem(item);
-                UpdateQualityAgedBrie(item);
-                UpdateQualityBackstage(item);
-
-                DecraseSellInDate(item);
-
-                if (item.SellIn < 0)
-                {
-                    UpdateQualityAgedBrie(item);
-                    if (!IsBackstagePass(item))
-                    {
-                        if (item.Quality > 0)
-                        {
-                            if (!IsLegendaryItem(item))
-                            {
-                                item.Quality = item.Quality - 1;
-                            }
-                        }
-                    }
-                    else
-                    {
-                        item.Quality = item.Quality - item.Quality;
-                    }
-                }
-
+                factory.Create(item).ProductDetails(item);
+                
             }
         }
 
