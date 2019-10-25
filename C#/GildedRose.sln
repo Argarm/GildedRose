@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.572
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29403.142
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GildedRose", "GildedRose\GildedRose.csproj", "{2CFEA0A1-2D7C-41F9-B5C7-FA2699E836BD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GildedRose", "GildedRose\GildedRose.csproj", "{2CFEA0A1-2D7C-41F9-B5C7-FA2699E836BD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GildedRose.Tests", "GildedRose.Tests\GildedRose.Tests.csproj", "{6732501D-F1B5-43F9-B87B-BB3E9F9ABB7F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GildedRose.Tests", "GildedRose.Tests\GildedRose.Tests.csproj", "{6732501D-F1B5-43F9-B87B-BB3E9F9ABB7F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuildedRoseApi", "GuildedRoseApi\GuildedRoseApi.csproj", "{7413DD94-492D-4C21-8D32-607F35DE10E8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{6732501D-F1B5-43F9-B87B-BB3E9F9ABB7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6732501D-F1B5-43F9-B87B-BB3E9F9ABB7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6732501D-F1B5-43F9-B87B-BB3E9F9ABB7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7413DD94-492D-4C21-8D32-607F35DE10E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7413DD94-492D-4C21-8D32-607F35DE10E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7413DD94-492D-4C21-8D32-607F35DE10E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7413DD94-492D-4C21-8D32-607F35DE10E8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
