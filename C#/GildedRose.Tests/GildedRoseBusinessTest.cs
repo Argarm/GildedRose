@@ -175,5 +175,17 @@ namespace GildedRoseCSharp.Test {
 
             expectedOutput[0].Should().BeEquivalentTo(Items[0]);
         }
+
+        [Test]
+        public void ConjuredItemShouldDecreasetheQualityTwiceFastAsNormalItemsAndCantBeNegative()
+        {
+            List<Item> Items = new List<Item>() { new Item { Name = "Conjured", SellIn = 1, Quality = 1 } };
+            var app = new GildedRose.GildedRose(Items);
+            app.UpdateQuality();
+
+            List<Item> expectedOutput = new List<Item>() { new Item { Name = "Conjured", SellIn = 0, Quality = 0 } };
+
+            expectedOutput[0].Should().BeEquivalentTo(Items[0]);
+        }
     }
 }
