@@ -165,7 +165,7 @@ namespace GildedRoseCSharp.Test {
         }
 
         [Test]
-        public void ConjuredItemShouldDecreasetheQualityTwiceFastAsNormalItems()
+        public void ConjuredItemShouldDecreaseHisQualityTwiceFastAsNormalItems()
         {
             List<Item> Items = new List<Item>() { new Item { Name = "Conjured", SellIn = 1, Quality = 20 } };
             var app = new GildedRose.GildedRose(Items);
@@ -177,13 +177,25 @@ namespace GildedRoseCSharp.Test {
         }
 
         [Test]
-        public void ConjuredItemShouldDecreasetheQualityTwiceFastAsNormalItemsAndCantBeNegative()
+        public void ConjuredItemShouldDecreaseHisQualityTwiceFastAsNormalItemsAndCantBeNegative()
         {
             List<Item> Items = new List<Item>() { new Item { Name = "Conjured", SellIn = 1, Quality = 1 } };
             var app = new GildedRose.GildedRose(Items);
             app.UpdateQuality();
 
             List<Item> expectedOutput = new List<Item>() { new Item { Name = "Conjured", SellIn = 0, Quality = 0 } };
+
+            expectedOutput[0].Should().BeEquivalentTo(Items[0]);
+        }
+
+        [Test]
+        public void ConjuredItemShouldDecreaseHisQualityByFourWhenSellInHasPassed()
+        {
+            List<Item> Items = new List<Item>() { new Item { Name = "Conjured", SellIn = 0, Quality = 5 } };
+            var app = new GildedRose.GildedRose(Items);
+            app.UpdateQuality();
+
+            List<Item> expectedOutput = new List<Item>() { new Item { Name = "Conjured", SellIn = -1, Quality = 1 } };
 
             expectedOutput[0].Should().BeEquivalentTo(Items[0]);
         }
