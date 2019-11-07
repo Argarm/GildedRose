@@ -9,7 +9,7 @@ namespace GildedRose
         private static int MAXIMUM_QUALITY = 50;
         public override void UpdateProductDetails(Item item)
         {
-            DescreaseSellIn(item);
+            DescreaseSellInOfAgedBrie(item);
             UpdateQualityOfAgedBrie(item);
         }
 
@@ -18,7 +18,7 @@ namespace GildedRose
             if (item.Quality < MAXIMUM_QUALITY) item.Quality += 1;
         }
 
-        private static void DescreaseSellIn(Item item)
+        private static void DescreaseSellInOfAgedBrie(Item item)
         {
             item.SellIn -= 1;
         }
