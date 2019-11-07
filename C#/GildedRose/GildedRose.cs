@@ -16,7 +16,7 @@ namespace GildedRose
         {
             foreach(Item item in Items)
             {
-                factory.Create(item).ProductDetails(item);
+                factory.Create(item).UpdateProductDetails(item);
             }
         }
 
