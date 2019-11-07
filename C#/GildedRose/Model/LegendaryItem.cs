@@ -8,7 +8,12 @@ namespace GildedRose
     {
         public override void UpdateProductDetails(Item item)
         {
-            item.Quality +=0;
+            UpdateQualityOfLegendaryItem(item);
+        }
+
+        private static void UpdateQualityOfLegendaryItem(Item item)
+        {
+            item.Quality += 0;
         }
     }
 }
