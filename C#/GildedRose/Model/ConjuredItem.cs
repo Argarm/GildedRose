@@ -14,19 +14,13 @@ namespace GildedRose.Model
 
         private static void UpdateQualityOfConjuredItem(Item item)
         {
-            if (item.SellIn < 0 && item.Quality > 4)
-            {
-                item.Quality -= 4;
-                return;
-            }
+            item.Quality -= IsInSellInPeriod(item) ? 2 : 4;
+            if (item.Quality < 0) item.Quality = 0;
+        }
 
-            if (item.Quality > 1)
-            {
-                item.Quality -= 2;
-                return;
-            }
-
-            item.Quality = 0;
+        private static bool IsInSellInPeriod(Item item)
+        {
+            return item.SellIn >= 0;
         }
 
         private static void DecreaseSellInOfConjuredItem(Item item)
